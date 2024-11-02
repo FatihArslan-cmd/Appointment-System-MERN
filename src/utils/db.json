@@ -7,10 +7,24 @@
       "password": "123456"
     },
     {
-      "id": "b5a7",
-      "name": "fefeff",
-      "email": "hunterdiamond934@gmail.com",
-      "password": "123456"
+      "id": "tgvf",
+      "username": "Ali",
+      "email": "ali@example1.com",
+      "password": "123456",
+      "contactNumber": "",
+      "firstName": "juhygtfr",
+      "lastName": "ıjuhygtr",
+      "birthDate": "2003-10-14"
+    },
+    {
+      "accountType": "personal",
+      "businessName": "",
+      "businessType": "Retail",
+      "contactNumber": "",
+      "firstName": "fe",
+      "lastName": "Arslan",
+      "birthDate": "2003-10-14",
+      "id": "131f"
     }
   ]
 }

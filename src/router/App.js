@@ -4,6 +4,7 @@ import { AuthProvider, AuthContext } from './AuthContext';
 import Login from '../pages/LoginPage';
 import Register from '../pages/RegisterPage';
 import ProfileDetails from '../pages/ProfileDetails';
+import Home from '../pages/Home';
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
             <Route path="/" element={<Navigate to="/login" />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route
+              path="/home"
+              element={<PrivateRoute><Home /></PrivateRoute>}
+            />
             <Route
               path="/ProfileDetails"
               element={<PrivateRoute><ProfileDetails /></PrivateRoute>}

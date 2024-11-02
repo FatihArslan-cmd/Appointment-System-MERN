@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
-import { getUsers } from "../../utils/api"; // Import the getUsers function
-import { ToastContainer, toast } from 'react-toastify'; // Import Toastify components
-import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for Toastify
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import { AuthContext } from "../../router/AuthContext";// Import AuthContext
+import { getUsers } from "../../utils/api";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "../../router/AuthContext";
 
 function SignInForm() {
   const [state, setState] = React.useState({
     email: "",
     password: ""
   });
-  const [error, setError] = React.useState(""); // To handle login errors
-  const navigate = useNavigate(); // Initialize navigate
-  const { setIsAuthenticated } = useContext(AuthContext); // Access setIsAuthenticated from AuthContext
+  const [error, setError] = React.useState("");
+  const navigate = useNavigate();
+  const { setIsAuthenticated } = useContext(AuthContext);
 
   const handleChange = evt => {
     const value = evt.target.value;
@@ -27,22 +27,33 @@ function SignInForm() {
     const { email, password } = state;
 
     try {
-      // Fetch all users to check credentials
       const users = await getUsers();
       const user = users.find(user => user.email === email && user.password === password);
 
       if (user) {
-        toast.success(`You are logged in with email: ${email}`); // Use toast for success message
-        setIsAuthenticated(true); // Update authentication status
-        navigate('/ProfileDetails'); // Redirect to ProfileDetails on successful login
+        localStorage.setItem('userId', user.id);
+        localStorage.setItem('userEmail', user.email);
+        
+        toast.info("Lütfen profil bilgilerinizi tamamlayın");
+        setIsAuthenticated(true);
+
+        // Navigate based on accountType
+        if (user.accountType === "personal" ) {
+          navigate('/home');
+        } else if (user.accountType === "business") {
+          navigate('/home');
+        } else {
+          navigate('/ProfileDetails'); // default navigation if accountType is missing
+        }
+         
       } else {
-        setError("Invalid email or password."); 
-        toast.error("Invalid email or password."); // Use toast for error message
+        setError("Geçersiz email veya şifre.");
+        toast.error("Geçersiz email veya şifre.");
       }
     } catch (error) {
-      console.error("Error during sign in:", error);
-      setError("An error occurred during sign in. Please try again.");
-      toast.error("An error occurred during sign in. Please try again."); // Use toast for error message
+      console.error("Giriş sırasında hata oluştu:", error);
+      setError("Giriş yapılırken bir hata oluştu. Lütfen tekrar deneyin.");
+      toast.error("Giriş yapılırken bir hata oluştu. Lütfen tekrar deneyin.");
     } finally {
       setState({
         email: "",
@@ -54,9 +65,9 @@ function SignInForm() {
   return (
     <div className="form-container sign-in-container">
       <form onSubmit={handleOnSubmit}>
-        <h1>Sign in</h1>
-        <span>use your account</span>
-        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Display error message */}
+        <h1>Giriş Yap</h1>
+        <span>Hesabınızı kullanın</span>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
         <input
           type="email"
           placeholder="Email"
@@ -67,14 +78,14 @@ function SignInForm() {
         <input
           type="password"
           name="password"
-          placeholder="Password"
+          placeholder="Şifre"
           value={state.password}
           onChange={handleChange}
         />
-        <a href="#">Forgot your password?</a>
-        <button>Sign In</button>
+        <a href="#">Şifrenizi mi unuttunuz?</a>
+        <button>Giriş Yap</button>
       </form>
-      <ToastContainer /> {/* Add ToastContainer here */}
+      <ToastContainer />
     </div>
   );
 }
