@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FaBriefcase, FaUser, FaPhone, FaCalendar, FaBuilding, FaGlobe } from 'react-icons/fa';
+import { Player } from '@lottiefiles/react-lottie-player';
 import './index.css';
 
 export default function ProfileDetails() {
@@ -36,13 +38,13 @@ export default function ProfileDetails() {
           className={`account-button ${accountType === 'business' ? 'selected' : ''}`}
           onClick={() => handleAccountTypeChange('business')}
         >
-          <i className="fas fa-briefcase"></i> Business Account
+          <FaBriefcase /> Business Account
         </button>
         <button
           className={`account-button ${accountType === 'personal' ? 'selected' : ''}`}
           onClick={() => handleAccountTypeChange('personal')}
         >
-          <i className="fas fa-user"></i> Personal Account
+          <FaUser /> Personal Account
         </button>
       </div>
 
@@ -50,7 +52,7 @@ export default function ProfileDetails() {
         <div className="form-section">
           <h3>Business Account Details</h3>
           <div className="form-group">
-            <label>Business Name</label>
+            <label><FaBuilding /> Business Name</label>
             <input
               type="text"
               name="businessName"
@@ -59,7 +61,7 @@ export default function ProfileDetails() {
             />
           </div>
           <div className="form-group">
-            <label>Business Type</label>
+            <label><FaGlobe /> Business Type</label>
             <select name="businessType" value={formData.businessType} onChange={handleChange}>
               <option value="Retail">Retail</option>
               <option value="Manufacturing">Manufacturing</option>
@@ -69,7 +71,7 @@ export default function ProfileDetails() {
             </select>
           </div>
           <div className="form-group">
-            <label>Contact Number</label>
+            <label><FaPhone /> Contact Number</label>
             <input
               type="tel"
               name="contactNumber"
@@ -85,7 +87,7 @@ export default function ProfileDetails() {
         <div className="form-section">
           <h3>Personal Account Details</h3>
           <div className="form-group">
-            <label>First Name</label>
+            <label><FaUser /> First Name</label>
             <input
               type="text"
               name="firstName"
@@ -94,7 +96,7 @@ export default function ProfileDetails() {
             />
           </div>
           <div className="form-group">
-            <label>Last Name</label>
+            <label><FaUser /> Last Name</label>
             <input
               type="text"
               name="lastName"
@@ -103,7 +105,7 @@ export default function ProfileDetails() {
             />
           </div>
           <div className="form-group">
-            <label>Birth Date</label>
+            <label><FaCalendar /> Birth Date</label>
             <input
               type="date"
               name="birthDate"
@@ -113,6 +115,25 @@ export default function ProfileDetails() {
           </div>
         </div>
       )}
+
+      <div className="lottie-container">
+        {accountType === 'business' && (
+          <Player
+            src="https://assets1.lottiefiles.com/packages/lf20_myejiggj.json"
+            className="player"
+            loop
+            autoplay
+          />
+        )}
+        {accountType === 'personal' && (
+          <Player
+            src="https://assets1.lottiefiles.com/packages/lf20_myejiggj.json"  // Replace with desired animation URL for personal account
+            className="player"
+            loop
+            autoplay
+          />
+        )}
+      </div>
     </div>
   );
 }

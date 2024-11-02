@@ -14,7 +14,6 @@ export const getUsers = async () => {
 
 export const addUser = async (userData) => {
   try {
-    // First, check if the email is unique
     const users = await getUsers();
     const emailExists = users.some(user => user.email === userData.email);
     

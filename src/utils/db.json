@@ -2,10 +2,15 @@
   "users": [
     {
       "id": 1,
-      "name": "Ali",
+      "username": "Ali",
       "email": "ali@example.com",
       "password": "123456"
+    },
+    {
+      "id": "b5a7",
+      "name": "fefeff",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "123456"
     }
- 
   ]
 }
