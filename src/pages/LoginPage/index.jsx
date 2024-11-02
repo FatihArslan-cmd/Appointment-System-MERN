@@ -5,18 +5,25 @@ import SignUpForm from "../RegisterPage";
 
 export default function App() {
   const [type, setType] = useState("signIn");
-  const handleOnClick = text => {
+
+  const handleOnClick = (text) => {
     if (text !== type) {
       setType(text);
       return;
     }
   };
+
+  const handleSignUpSuccess = () => {
+    setType("signIn"); 
+  };
+
   const containerClass =
     "container " + (type === "signUp" ? "right-panel-active" : "");
+
   return (
     <div className="App">
       <div className={containerClass} id="container">
-        <SignUpForm />
+        <SignUpForm onSignUpSuccess={handleSignUpSuccess} /> 
         <SignInForm />
         <div className="overlay-container">
           <div className="overlay">
@@ -37,7 +44,7 @@ export default function App() {
               <h1>Hello, Friend!</h1>
               <p>Enter your personal details and start journey with us</p>
               <button
-                className="ghost "
+                className="ghost"
                 id="signUp"
                 onClick={() => handleOnClick("signUp")}
               >

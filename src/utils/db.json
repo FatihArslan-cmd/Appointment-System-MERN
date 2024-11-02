@@ -1,0 +1,166 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ali",
+      "email": "ali@example.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Ayşe",
+      "email": "ayse@example.com",
+      "password": "abcdef"
+    },
+    {
+      "id": "92d4",
+      "name": "df",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "123456++"
+    },
+    {
+      "id": "a027",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "09d2",
+      "name": "123",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "124574"
+    },
+    {
+      "id": "6bdf",
+      "name": "hunterdiamond934@gmail.com",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "c64b",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "3458",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "62a8",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "71fb",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "826e",
+      "name": "hunterdiamond934@gmail.com",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "134567h"
+    },
+    {
+      "id": "cced",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "5401",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "2987",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "45bd",
+      "name": "hunterdiamond934@gmail.com",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "1111111"
+    },
+    {
+      "id": "8778",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "juhygtrfde"
+    },
+    {
+      "id": "8d41",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "pşlokıjuhygtfrde"
+    },
+    {
+      "id": "7b53",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "9657",
+      "name": "hunterdiamond934@gmail.com",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": "8183",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "783d",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "7795",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "773e",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "18a4",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "9f46",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "d156",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    },
+    {
+      "id": "1104",
+      "name": "Fatih",
+      "email": "hunterdiamond934@gmail.com",
+      "password": "12345677"
+    }
+  ]
+}
