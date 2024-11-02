@@ -21,6 +21,7 @@ export default function App() {
     "container " + (type === "signUp" ? "right-panel-active" : "");
 
   return (
+    <div className="background-page">
     <div className="App">
       <div className={containerClass} id="container">
         <SignUpForm onSignUpSuccess={handleSignUpSuccess} /> 
@@ -54,6 +55,7 @@ export default function App() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-body {
+.background-page {
     margin: 0;
     padding: 0;
     background: url('../../locales/forest-3119826_1280.jpg');
@@ -22,9 +22,9 @@ body {
   }
   
   .container {
-    background-color: rgba(255, 239, 213, 0.9); /* Sıcak bej tonu */
+    background-color: rgba(255, 239, 213, 0.9);
     border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(139, 69, 19, 0.25), 0 10px 10px rgba(139, 69, 19, 0.22); /* Kahverengi tonları */
+    box-shadow: 0 14px 28px rgba(139, 69, 19, 0.25), 0 10px 10px rgba(139, 69, 19, 0.22);
     position: relative;
     overflow: hidden;
     width: 768px;
@@ -33,7 +33,7 @@ body {
   }
   
   
-  /* Blur efekti için overlay */
+  
   body::before {
     content: '';
     position: fixed;

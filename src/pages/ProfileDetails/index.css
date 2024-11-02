@@ -1,0 +1,72 @@
+.profile-details-container {
+    max-width: 500px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .account-type-selection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .account-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+  }
+  
+  .account-button.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .account-button:hover {
+    background-color: #0056b3;
+    color: #fff;
+  }
+  
+  .form-section {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Icon adjustments */
+  .account-button i {
+    font-size: 1.1em;
+  }
+  

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { getUsers } from "../../utils/api"; // Import the getUsers function
 import { ToastContainer, toast } from 'react-toastify'; // Import Toastify components
 import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for Toastify
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { AuthContext } from "../../router/AuthContext";// Import AuthContext
 
 function SignInForm() {
   const [state, setState] = React.useState({
@@ -9,6 +11,8 @@ function SignInForm() {
     password: ""
   });
   const [error, setError] = React.useState(""); // To handle login errors
+  const navigate = useNavigate(); // Initialize navigate
+  const { setIsAuthenticated } = useContext(AuthContext); // Access setIsAuthenticated from AuthContext
 
   const handleChange = evt => {
     const value = evt.target.value;
@@ -29,6 +33,8 @@ function SignInForm() {
 
       if (user) {
         toast.success(`You are logged in with email: ${email}`); // Use toast for success message
+        setIsAuthenticated(true); // Update authentication status
+        navigate('/ProfileDetails'); // Redirect to ProfileDetails on successful login
       } else {
         setError("Invalid email or password."); 
         toast.error("Invalid email or password."); // Use toast for error message
