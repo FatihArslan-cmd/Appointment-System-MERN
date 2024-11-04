@@ -1,0 +1,139 @@
+
+.profile-details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-details-container h2 {
+  color: #2d3748;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.account-type-selection {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.account-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #4a5568;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-button:hover {
+  border-color: #4299e1;
+  color: #4299e1;
+}
+
+.account-button.selected {
+  background: #4299e1;
+  color: white;
+  border-color: #4299e1;
+}
+
+.form-section {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form-section h3 {
+  color: #2d3748;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #4299e1;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background: #3182ce;
+}
+
+.submit-button:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  color: #4a5568;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+
+@media (max-width: 640px) {
+  .profile-details-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .account-type-selection {
+    flex-direction: column;
+  }
+
+  .account-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+}
