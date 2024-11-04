@@ -1,14 +1,14 @@
 .App {
-  font-family: sans-serif;
+  font-family: 'MyCustomFont';
   text-align: center;
 }
-
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+h1 {
+    font-size: 1.8rem; /* Adjust as needed */
+  }
 
 * {
   box-sizing: border-box;
 }
-
 .background-page {
     margin: 0;
     padding: 0;
@@ -47,7 +47,6 @@
     -webkit-filter: blur(8px);
     z-index: -1;
   }
-  
 
 h1 {
   font-weight: bold;

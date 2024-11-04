@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBriefcase, FaUser, FaPhone, FaCalendar, FaBuilding, FaGlobe } from 'react-icons/fa';
+import { FaBriefcase, FaUser, FaPhone, FaCalendar, FaBuilding, FaGlobe, FaClock } from 'react-icons/fa';
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -156,12 +156,14 @@ export default function ProfileDetails() {
     contactNumber: '',
     firstName: '',
     lastName: '',
-    birthDate: ''
+    birthDate: '',
+    country: '',
+    city: '',
+    operatingHours: ''
   });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Inject styles
     const styleSheet = document.createElement("style");
     styleSheet.textContent = styles;
     document.head.appendChild(styleSheet);
@@ -181,12 +183,8 @@ export default function ProfileDetails() {
         if (userData.accountType) {
           setAccountType(userData.accountType);
           setFormData({
-            businessName: userData.businessName || '',
-            businessType: userData.businessType || 'Retail',
-            contactNumber: userData.contactNumber || '',
-            firstName: userData.firstName || '',
-            lastName: userData.lastName || '',
-            birthDate: userData.birthDate || ''
+            ...formData,
+            ...userData
           });
         }
       } catch (error) {
@@ -202,7 +200,6 @@ export default function ProfileDetails() {
 
     fetchUserData();
 
-    // Cleanup styles
     return () => {
       document.head.removeChild(styleSheet);
     };
@@ -216,7 +213,10 @@ export default function ProfileDetails() {
       contactNumber: '',
       firstName: '',
       lastName: '',
-      birthDate: ''
+      birthDate: '',
+      country: '',
+      city: '',
+      operatingHours: ''
     });
   };
 
@@ -244,7 +244,7 @@ export default function ProfileDetails() {
       if (accountType === 'personal') {
         delete updateData.businessName;
         delete updateData.businessType;
-        delete updateData.contactNumber;
+        delete updateData.operatingHours;
       }
       if (accountType === 'business') {
         delete updateData.firstName;
@@ -317,13 +317,33 @@ export default function ProfileDetails() {
               </select>
             </div>
             <div className="form-group">
-              <label><FaPhone /> İletişim Numarası</label>
+              <label><FaClock /> İş Saatleri</label>
               <input
-                type="tel"
-                name="contactNumber"
-                value={formData.contactNumber}
+                type="text"
+                name="operatingHours"
+                value={formData.operatingHours}
                 onChange={handleChange}
-                placeholder="+90 123 456 78 90"
+                placeholder="09:00 - 18:00"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label><FaGlobe /> Ülke</label>
+              <input
+                type="text"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label><FaBuilding /> Şehir</label>
+              <input
+                type="text"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -359,6 +379,37 @@ export default function ProfileDetails() {
                 type="date"
                 name="birthDate"
                 value={formData.birthDate}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label><FaPhone /> Telefon</label>
+              <input
+                type="tel"
+                name="contactNumber"
+                value={formData.contactNumber}
+                onChange={handleChange}
+                placeholder="+90 123 456 78 90"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label><FaGlobe /> Ülke</label>
+              <input
+                type="text"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label><FaBuilding /> Şehir</label>
+              <input
+                type="text"
+                name="city"
+                value={formData.city}
                 onChange={handleChange}
                 required
               />
